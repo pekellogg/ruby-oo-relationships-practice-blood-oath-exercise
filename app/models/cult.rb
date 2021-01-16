@@ -1,10 +1,9 @@
 # ruby tools/console.rb
-
 class Cult
 
     @@all = []
     
-    attr_accessor :name, :location, :slogan, :cult_population
+    attr_accessor :name, :location, :slogan, :cult_population, :follower
     attr_reader :founding_year
 
     def initialize(name, location, founding_year) # slogan, cult_population
@@ -13,7 +12,7 @@ class Cult
         @founding_year = founding_year
         @slogan = ""
         @cult_population = 0
-        @follower = []
+        @follower = follower
         @@all << self
     end
 
@@ -23,6 +22,7 @@ class Cult
 
     def recruit_follower(follower)
         # add more followers to the cult
+        self.follower = follower
         @cult_population += 1
     end
 
@@ -44,5 +44,4 @@ class Cult
         end
     end
     
-    # attr_reader 
 end
